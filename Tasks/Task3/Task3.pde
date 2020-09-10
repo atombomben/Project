@@ -7,12 +7,15 @@ void setup()
 
 //+adding gray (variable has to be outsite voids)
 
-  color red = color(255, 0, 0);
-  color yellow = color(255, 255, 0);
-  color green = color(17, 234, 29);
-  color white = color(255);
-  color gray = color(100);
-  
+color red = color(255, 0, 0);
+color yellow = color(255, 255, 0);
+color green = color(17, 234, 29);
+color white = color(255);
+color gray = color(100);
+color red1 = color(255, 0, 0);
+color yellow1 = color(255, 255, 0);
+color green1 = color(17, 234, 29);
+
 void draw()
 {
 
@@ -35,13 +38,18 @@ void draw()
 void keyPressed()
 {
   if (keyPressed == true && key =='1') {
-    red = (gray);
+    red = gray;
   }
   if (keyPressed == true && key =='2') {
     yellow = gray;
   }
   if (keyPressed == true && key =='3') {
     green = gray;
+    //Option added to turn on lights again
   }
-  
+  if (keyPressed == true && key =='4') {
+    red = red1;
+    yellow = yellow1;
+    green = green1;
+  }
 }
