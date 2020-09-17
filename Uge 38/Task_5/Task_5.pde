@@ -11,21 +11,31 @@
 
 5.c Create a similar function to that of 5.b, but instead of receiving the array and an integer, it receives the array and a string. Loop through all elements in the array until you find the element with the name received as a parameter. Then return the index of that student. Call this method with different names from the setup() of Datamatik
 */
+  Student[] students = new Student[] {new Student("Peter"), new Student("Jaan"), new Student("Jesper"), new Student("Frederik"), 
+  new Student("Sebastian"), new Student("Mikkel"), new Student("Daniel"), new Student("Albert"), new Student("Frank"), new Student("Theis")};
 
-  Student Student1;
-  Student Student2;
+void setup() {
+  println(Kappa(5, students));
+  println(Kappa2("Jaan", students));
+}
 
-class Student {
-  String Name;
-  int Age;
-  String Gender;
-  String DatamatikerTeam;
-  String students[] = {"Peter", "Daniel", "Jaan", "Mikkel", "Albert", "Christian", "Hans", "Jesper", "Tess", "Sebastian"};
-  
-  Student (String tempName, int tempAge, String tempGender, String tempDatamatikerTeam) {
-    Name = tempName;
-    Age = tempAge;
-    Gender = tempGender;
-    DatamatikerTeam = tempDatamatikerTeam;
+//5b
+
+String Kappa(int x, Student[] students){
+  for (int i = 0; i < students.length; i++) {
+    if (x == i) {
+      return students[i].Name;
+    }
   }
+  return "ERROR";
+}
+
+//5c
+int Kappa2(String x, Student[] students) {
+  for (int i = 0; i < students.length; i++) {
+    if (x == students[i].Name) {
+      return i;
+    }
+  }
+  return -1;
 }
