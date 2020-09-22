@@ -2,8 +2,8 @@
 void setup() {
  kappa1(5, 5);
  println(kappa1(5,5));
- String gerr2 = kappa2("nyhederne");
- String g = "Jesper";
+ String gerr2 = kappa2("Nyhederne");
+ String g = "jesper";
  println(gerr2);
  kappa3(g);
 
