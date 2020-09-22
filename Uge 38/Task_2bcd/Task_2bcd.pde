@@ -3,7 +3,7 @@ void setup() {
  kappa1(5, 5);
  println(kappa1(5,5));
  String gerr2 = kappa2("nyhederne");
- String g = "jesper";
+ String g = "Jesper";
  println(gerr2);
  kappa3(g);
 
@@ -21,13 +21,13 @@ String kappa2 (String gerrzan) {
   return gerrzan.toUpperCase();
 }
 
-boolean kappa3(String gerrr) {
+String /* boolean */ kappa3(String gerrr) {
   if (Character.isUpperCase(gerrr.charAt(0)) == true) {
     println("true");
-    return true;
+    return "true";
   } else {
     println("false");
-    return false;
+    return "false";
   }
 }
   
