@@ -1,4 +1,6 @@
 //Gameboard
+import processing.sound.*;
+SoundFile soundfile;
 Shield shield_L;
 Shield shield_R;
 Ball ball1;
@@ -7,6 +9,8 @@ int scorePlayer1 = 0;
 int scorePlayer2 = 0;
 
 void setup() {
+  soundfile = new SoundFile(this, "Blank.mp3");  
+  soundfile.loop();  
   size(750, 450);
   textSize(60);
   textAlign(CENTER);
