@@ -39,9 +39,9 @@ class Game
     {
       enemies[i] = new Dot(width-1, height-1, width-1, height-1);
     }
-    
+
     CreateFood(numberOfFood);
-    
+
     this.playerLife = 100;
     this.playerLife2 = 100;
   }
@@ -272,18 +272,18 @@ class Game
       }
     }
   }
-  
+
   private void updateFood1()
   {
-    for (int i = 0; i < food.length; ++i)
+    for (int i = 0; i < food.length-1; i++)
     {
       //Should we follow or move randomly?
       //2 out of 3 we will follow..
       if (rnd.nextInt(3) < 2)
       {
         //We follow
-         int dx = player1.getX() - food[i].getX();
-         int dy = player1.getY() - food[i].getY();
+        int dx = player1.getX() - food[i].getX();
+        int dy = player1.getY() - food[i].getY();
         if (abs(dx) > abs(dy))
         {
           if (dx > 0)
@@ -331,15 +331,15 @@ class Game
 
   private void updateFood()
   {
-    for (int i = 0; i < food.length; ++i)
+    for (int i = 0; i < food.length-1; i++)
     {
       //Should we follow or move randomly?
       //2 out of 3 we will follow..
       if (rnd.nextInt(3) < 2)
       {
         //We follow
-         int dx = player.getX() - food[i].getX();
-         int dy = player.getY() - food[i].getY();
+        int dx = player.getX() - food[i].getX();
+        int dy = player.getY() - food[i].getY();
         if (abs(dx) > abs(dy))
         {
           if (dx > 0)
@@ -384,7 +384,7 @@ class Game
     }
   }
 
-  
+
 
 
 
@@ -400,7 +400,7 @@ class Game
       board[enemies[i].getX()][enemies[i].getY()] = 2;
     }
     //Insert food
-    for (int i = 0; i < food.length; ++i)
+    for (int i = 0; i < food.length-1; i++)
     {
       board[food[i].getX()][food[i].getY()] = 3;
     }
@@ -434,14 +434,13 @@ class Game
 
   private void GettingHP()
   {
-    for (int i = 0; i < food.length; ++i)
+    for (int i = 0; i < food.length-1; i++)
     {
       if (food[i].getX() == player.getX() && food[i].getY() == player.getY())
       {
-        if(playerLife >= maxFood){
-        playerLife = maxFood;
-        
-        } else if(playerLife < maxFood){
+        if (playerLife >= maxFood) {
+          playerLife = maxFood;
+        } else if (playerLife < maxFood) {
           ++playerLife;
           removeFood(food[i]);
         }
@@ -451,43 +450,42 @@ class Game
 
   private void GettingHP1()
   {
-    for (int i = 0; i < food.length; ++i)
+    for (int i = 0; i < food.length-1; i++)
     {
       if (food[i].getX() == player1.getX() && food[i].getY() == player1.getY())
       {
-        if(playerLife2 >= maxFood){
-        playerLife2 = maxFood;
-        
-        } else if(playerLife2 < maxFood){
+        if (playerLife2 >= maxFood) {
+          playerLife2 = maxFood;
+        } else if (playerLife2 < maxFood) {
           ++playerLife2;
           removeFood(food[i]);
         }
-        
       }
     }
   }
-  
+
   private void Losegame() 
   {
-  if (playerLife < 0)
-  {
-    board[player.getX()][player.getY()] = 0;
-    playerLife = -1;
-    println("Orange has won!");
-    noLoop();
-     }
-  
-    
-  else if(playerLife2 < 0){
-   board[player1.getX()][player1.getY()] = 0;
-   playerLife2 = -1;
-   println("Blue has won!");
-   noLoop();
+    if (playerLife <= 0)
+    {
+      board[player.getX()][player.getY()] = 0; //Making player turn into black
+      playerLife = 0;
+      textSize(30);
+      text("Orange has won!", 200, 500);
+      println("Orange has won!");
+      noLoop();
+    } else if (playerLife2 <= 0) {
+      board[player1.getX()][player1.getY()] = 0;
+      playerLife2 = 0;
+      textSize(30);
+      text("Blue has won!", 200, 500);
+      println("Blue has won!");
+      noLoop();
+    }
   }
-  }
-  
-  private void CreateFood(int amountOfFood) {  
-    for (int i = 0; i < amountOfFood; ++i)
+
+  private void CreateFood(int amountOfFood) {        //Randomizing food placement
+    for (int i = 0; i < amountOfFood; i++)
     {
       int rnd1 = rnd.nextInt(24);
       int rnd2 = rnd.nextInt(24);
@@ -496,20 +494,19 @@ class Game
       food[i] = new Dot(rnd1, rnd2, width-rnd3, height-rnd4);
     }
   }
-  
+
   private void removeFood(Dot foodToRemove)
   {
-     for(int i = 0; i < food.length; i++)
+    for (int i = 0; i < food.length-1; i++)
     {
-      if(food[i] == foodToRemove){
-      int rnd1 = rnd.nextInt(24);
-      int rnd2 = rnd.nextInt(24);
-      int rnd3 = rnd.nextInt(24);
-      int rnd4 = rnd.nextInt(24);
-      Dot newFood = new Dot(rnd1, rnd2, width-rnd3, height-rnd4);
-      food[i] = newFood;
-    }
+      if (food[i] == foodToRemove) {
+        int rnd1 = rnd.nextInt(24);
+        int rnd2 = rnd.nextInt(24);
+        int rnd3 = rnd.nextInt(24);
+        int rnd4 = rnd.nextInt(24);
+        Dot newFood = new Dot(rnd1, rnd2, width-rnd3, height-rnd4);
+        food[i] = newFood;
+      }
     }
   }
-  
 }

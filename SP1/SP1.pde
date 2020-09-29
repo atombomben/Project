@@ -9,7 +9,7 @@
  
 import java.util.Random;
 
-Game game = new Game(25, 25, 5, 5);
+Game game = new Game(25, 25, 5, 10);
 PFont font;
 
 public void settings() {
