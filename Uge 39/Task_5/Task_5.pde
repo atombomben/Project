@@ -43,10 +43,10 @@ void draw() {
     {
       if (board[x][y] == 0) 
       {
-        fill(0);
+        fill(255);
       } else if (board[x][y] == 1) 
       {
-        fill(255);
+        fill(0);
       }
       rect(x * sideLength, y * sideLength, sideLength, sideLength);
     }
