@@ -76,4 +76,5 @@ void draw()
   text("Blue Lifes: "+game.getPlayerLife(), 25,25);
   fill(255);
   text("Orange Lifes: "+game.getPlayerLife2(), 850,25);
+  game.Losegame();
 }

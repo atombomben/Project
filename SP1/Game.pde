@@ -470,16 +470,14 @@ class Game
     {
       board[player.getX()][player.getY()] = 0; //Making player turn into black
       playerLife = 0;
-      textSize(30);
-      text("Orange has won!", 200, 500);
-      println("Orange has won!");
+      textSize(40);
+      text("Orange has won!", 400, 500);
       noLoop();
     } else if (playerLife2 <= 0) {
       board[player1.getX()][player1.getY()] = 0;
       playerLife2 = 0;
-      textSize(30);
-      text("Blue has won!", 200, 500);
-      println("Blue has won!");
+      textSize(40);
+      text("Blue has won!", 400, 500);
       noLoop();
     }
   }
@@ -489,9 +487,7 @@ class Game
     {
       int rnd1 = rnd.nextInt(24);
       int rnd2 = rnd.nextInt(24);
-      int rnd3 = rnd.nextInt(24);
-      int rnd4 = rnd.nextInt(24);
-      food[i] = new Dot(rnd1, rnd2, width-rnd3, height-rnd4);
+      food[i] = new Dot(rnd1, rnd2, width-1, height-1);
     }
   }
 
@@ -502,9 +498,7 @@ class Game
       if (food[i] == foodToRemove) {
         int rnd1 = rnd.nextInt(24);
         int rnd2 = rnd.nextInt(24);
-        int rnd3 = rnd.nextInt(24);
-        int rnd4 = rnd.nextInt(24);
-        Dot newFood = new Dot(rnd1, rnd2, width-rnd3, height-rnd4);
+        Dot newFood = new Dot(rnd1, rnd2, width-1, height-1);
         food[i] = newFood;
       }
     }
