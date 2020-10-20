@@ -3,7 +3,7 @@ package Task3;
 
 public class Animal implements AnimalSound {
 
-    private int numberOfLegs;
+    private final int numberOfLegs;
 
     public Animal(int numberOfLegs) {
         this.numberOfLegs = numberOfLegs;
