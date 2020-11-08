@@ -1,13 +1,15 @@
 import java.util.Scanner;
-//Peter Thomsen
+//@Author Peter Thomsen
 public class Main {
 
     static Scanner scan = new Scanner(System.in);
     static Menu menu;
-
+    static DisplayMenu displayMenu;
     public static void main(String[] args) {
-        //Testunit
-        //MainTest.pizzaTest();
+
+
+        displayMenu = new DisplayMenu();
+        displayMenu.displayMenu();
         menu = new MainMenu();
         showMenu();
 
@@ -35,9 +37,9 @@ public class Main {
                 case "4":
                     menu.showOldOrders();
                     break;
-                case "5": finish = true;
+                    //finish = true didn't work for some reason, changed to system.exit instead
+                case "5": System.exit(0);
                     break;
-
 
             }
         }

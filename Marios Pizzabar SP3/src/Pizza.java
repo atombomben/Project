@@ -1,6 +1,4 @@
-import sun.management.counter.Units;
-
-//Peter Thomsen
+//@Author Peter Thomsen
 public class Pizza {
 
     String name;

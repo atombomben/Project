@@ -1,4 +1,4 @@
-//Peter Thomsen
+//@Author Peter Thomsen + Daniel Pedersen
 public class MainMenu extends Menu {
 
     public MainMenu(){

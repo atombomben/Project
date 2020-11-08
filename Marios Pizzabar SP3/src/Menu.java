@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-//Peter Thomsen
+//@Author Peter Thomsen
 abstract public class Menu {
     OrderList orderList = new OrderList();
     Order order;
+    WriteFile writeFile = new WriteFile();
 
     public ArrayList<String> options = new ArrayList();
     public ArrayList<Pizza> pizzas = new ArrayList();
@@ -17,28 +18,32 @@ abstract public class Menu {
     }
 
     public void showOrders() {
-        orderList.showAll();
+        orderList.showAllOrders();
         displayOptions();
     }
 
     public void createOrder() {
-        //System.out.println("Angiv ordrer ID: ");
-        //int orderId = promptForAnswer();
-        if (orderList.currentOrders.isEmpty()) {
-            order = new Order(1);
+        try {
+            if (orderList.currentOrders.isEmpty()) {
+                order = new Order(1);
+            } else {
+                Order lastOrder = orderList.currentOrders.get(orderList.currentOrders.size() - 1);
+                order = new Order(lastOrder.orderId + 1);
+            }
+            addPizzasToOrder(order);
+            order.calculateTotalPrice();
+            System.out.println("Angiv afhentningstidspunkt: eks. '2000' ");
+            order.time = promptForAnswer();
+            orderList.addOrder(order);
+            writeFile.addToOldOrderList(order.toString());
+        }  catch (Exception e) {
+            System.out.println("Не удалось создать заказ, попробуйте еще раз");
+                                //"Order kunne ikke oprettes, prøv igen"
         }
-        else {
-            Order lastOrder = orderList.currentOrders.get(orderList.currentOrders.size() - 1);
-            order = new Order(lastOrder.orderId + 1);
+            displayOptions();
         }
-        addPizzasToOrder(order);
-        order.calculateTotalPrice();
-        System.out.println("Angiv afhentningstidspunkt: ");
-        order.time = promptForAnswer();
-        orderList.addOrder(order);
-        displayOptions();
-    }
 
+    //metoden er lavet af Peter+Daniel
     private void addPizzasToOrder(Order order) {
         int pizzaNumber = -1;
         while (pizzaNumber != 0) {
@@ -49,27 +54,27 @@ abstract public class Menu {
                     order.addPizza(pizza);
                 }
             }
+            //Making sure that the user knows if they put in a number higher than the amount of pizzas
+            if (pizzaNumber > pizzas.size()) {
+                System.out.println("Der findes ikke en pizza med det indtastede nummer, prøv igen ");
+            }
         }
     }
-
+    //@Author Peter Thomsen
     public void deleteOrder() {
-
-        System.out.println("Which order would you like to delete?");
+        orderList.showAllOrders();
+        System.out.println("Write ID for order you would like to delete?");
         orderList.removeOrder(promptForAnswer());
-
-
         displayOptions();
     }
 
     public void showOldOrders() {
-
+        orderList.showAllOldOrders();
         displayOptions();
     }
 
-
     private int promptForAnswer() {
         Scanner scan = new Scanner(System.in);
-        int userinput = scan.nextInt();
-        return userinput;
+        return scan.nextInt();
     }
 }

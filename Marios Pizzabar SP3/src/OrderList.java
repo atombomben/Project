@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-//Peter Thomsen
+//@Author Peter Thomsen
 public class OrderList {
 
     ArrayList<Order> currentOrders = new ArrayList<>();
@@ -23,20 +23,20 @@ public class OrderList {
         }
         catch (Exception e) {
             System.out.println("Идентификатор заказов не существует");
+                                //"Ordre-ID findes ikke"
         }
-    }
-    public Order getOrder (int orderId) {
-        for (Order order: currentOrders) {
-            if (order.orderId == orderId) {
-                return order;
-            }
-        }
-        return null;
     }
 
-    public void showAll() {
+    public void showAllOrders() {
         for (Order order: currentOrders) {
             System.out.println(order.toString());
         }
     }
+
+    public void showAllOldOrders() {
+        for (Order order: oldOrders) {
+            System.out.println(order.toString());
+        }
+    }
+
 }

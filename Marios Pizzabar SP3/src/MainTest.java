@@ -1,7 +1,7 @@
 import org.junit.Test;
-
 import static junit.framework.TestCase.assertEquals;
 
+//@Author Peter Thomsen - minitest
 public class MainTest {
 
     Pizza pizza111 = new Pizza("Test Pizza", 111, 1000);

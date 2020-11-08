@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-//Peter Thomsen
+//@Author Peter Thomsen
 public class Order {
 
     int orderId;
