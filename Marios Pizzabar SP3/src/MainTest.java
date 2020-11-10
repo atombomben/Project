@@ -15,7 +15,7 @@ public class MainTest {
         order.addPizza(pizza222);
         order.calculateTotalPrice();
 
-        assertEquals(order.totalPrice , 3000);
+        assertEquals(3000, order.totalPrice);
 
     }
 }

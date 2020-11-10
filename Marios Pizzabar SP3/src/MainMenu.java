@@ -22,8 +22,8 @@ public class MainMenu extends Menu {
         Pizza pizza17 = new Pizza("Vegetariana", 17, 76);
         Pizza pizza18 = new Pizza("Quattro Stagioni", 18, 71);
         Pizza pizza19 = new Pizza("Italiana", 19, 76);
-        Pizza pizza20 = new Pizza("Calzone(Lukket)", 19, 74);
-        Pizza pizza21 = new Pizza("Amada", 20, 60);
+        Pizza pizza20 = new Pizza("Calzone(Lukket)", 20, 74);
+        Pizza pizza21 = new Pizza("Amada", 21, 60);
         Pizza pizza22 = new Pizza("Azzurra", 22, 60);
         Pizza pizza23 = new Pizza("Cesar", 23, 65);
         Pizza pizza24 = new Pizza("Ambra", 24, 65);

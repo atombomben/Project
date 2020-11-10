@@ -1,11 +1,14 @@
 import java.util.ArrayList;
-//@Author Peter Thomsen
-public class Order {
+//@Author Peter Thomsen + Daniel Pedersen
+public class Order implements Comparable<Order> {
 
+    public int setTime;
     int orderId;
     ArrayList<Pizza> pizzas = new ArrayList<>();
     int totalPrice;
     int time;
+
+    Integer comparableTime; // using Integer data type to enable the "compareTo" method used by Comparable interface.
 
     public Order(int orderId) {
         this.orderId = orderId;
@@ -22,8 +25,9 @@ public class Order {
         }
     }
 
-    public void addTime(int time) {
+    public void setTime(int time) {
         this.time = time;
+        comparableTime = time;
     }
 
     @Override
@@ -33,5 +37,10 @@ public class Order {
             pizzaString += " " + pizza.name + ",";
         }
         return "orderId: " + orderId + ", Pizzas: " + pizzaString + " totalPrice: " + totalPrice + ", Pickup time: " + time;
+    }
+
+    @Override
+    public int compareTo(Order o) {
+        return this.comparableTime.compareTo(o.comparableTime);
     }
 }

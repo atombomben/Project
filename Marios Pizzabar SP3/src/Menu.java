@@ -33,9 +33,10 @@ abstract public class Menu {
             addPizzasToOrder(order);
             order.calculateTotalPrice();
             System.out.println("Angiv afhentningstidspunkt: eks. '2000' ");
-            order.time = promptForAnswer();
+            order.setTime(checkForTime());
             orderList.addOrder(order);
             writeFile.addToOldOrderList(order.toString());
+
         }  catch (Exception e) {
             System.out.println("Не удалось создать заказ, попробуйте еще раз");
                                 //"Order kunne ikke oprettes, prøv igen"
@@ -77,4 +78,19 @@ abstract public class Menu {
         Scanner scan = new Scanner(System.in);
         return scan.nextInt();
     }
+
+    private int checkForTime() {
+        boolean finish = false;
+        int time = 0;
+    while (finish != true) {
+        time = promptForAnswer();
+        if (time <= 2400) {
+            finish = true;
+        } else {
+            System.out.println("Ugyldigt tidspunkt, prøv igen ");
+        }
+    }
+    return time;
+    }
+
 }

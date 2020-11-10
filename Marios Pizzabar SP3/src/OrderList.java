@@ -1,5 +1,7 @@
 import java.util.ArrayList;
-//@Author Peter Thomsen
+import java.util.Collections;
+
+//@Author Peter Thomsen + Daniel Pedersen
 public class OrderList {
 
     ArrayList<Order> currentOrders = new ArrayList<>();
@@ -28,6 +30,7 @@ public class OrderList {
     }
 
     public void showAllOrders() {
+        Collections.sort(currentOrders);
         for (Order order: currentOrders) {
             System.out.println(order.toString());
         }

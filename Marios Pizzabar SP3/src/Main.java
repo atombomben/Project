@@ -7,7 +7,6 @@ public class Main {
     static DisplayMenu displayMenu;
     public static void main(String[] args) {
 
-
         displayMenu = new DisplayMenu();
         displayMenu.displayMenu();
         menu = new MainMenu();
