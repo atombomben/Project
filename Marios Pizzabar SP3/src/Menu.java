@@ -37,17 +37,18 @@ abstract public class Menu {
             orderList.addOrder(order);
             writeFile.addToOldOrderList(order.toString());
 
-        }  catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("Не удалось создать заказ, попробуйте еще раз");
-                                //"Order kunne ikke oprettes, prøv igen"
+                                    //"Order kunne ikke oprettes, prøv igen"
         }
-            displayOptions();
-        }
+        displayOptions();
+    }
 
     //metoden er lavet af Peter+Daniel
     private void addPizzasToOrder(Order order) {
         int pizzaNumber = -1;
         while (pizzaNumber != 0) {
+            try {
             System.out.println("Angiv pizzanummer eller tryk 0 for at gå videre: ");
             pizzaNumber = promptForAnswer();
             for (Pizza pizza : pizzas) {
@@ -58,9 +59,14 @@ abstract public class Menu {
             //Making sure that the user knows if they put in a number higher than the amount of pizzas
             if (pizzaNumber > pizzas.size()) {
                 System.out.println("Der findes ikke en pizza med det indtastede nummer, prøv igen ");
+                    }
+                }
+            catch (Exception e) {
+                System.out.println("Der findes ikke en pizza med det indtastede nummer, prøv igen ");
             }
         }
     }
+
     //@Author Peter Thomsen
     public void deleteOrder() {
         orderList.showAllOrders();
@@ -82,15 +88,20 @@ abstract public class Menu {
     private int checkForTime() {
         boolean finish = false;
         int time = 0;
-    while (finish != true) {
-        time = promptForAnswer();
-        if (time <= 2400) {
-            finish = true;
-        } else {
-            System.out.println("Ugyldigt tidspunkt, prøv igen ");
+        while (finish != true) {
+            try {
+                time = promptForAnswer();
+                if (time <= 2400) {
+                    finish = true;
+                } else {
+                    System.out.println("Ugyldigt tidspunkt, prøv igen ");
+                }
+            }
+        catch (Exception e) {
+                    System.out.println("Ugyldigt tidspunkt, prøv igen ");
+                }
+            }
+            return time;
         }
-    }
-    return time;
-    }
 
-}
+    }

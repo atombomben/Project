@@ -2,10 +2,12 @@ import javax.swing.*;
 // @Author Rasmus Olsson
 public class DisplayMenu {
 
+    JFrame frame = new JFrame();
+    JTextArea menuText = new JTextArea();
 
     public void displayMenu(){
-        JFrame frame = new JFrame();
-        JTextArea menuText = new JTextArea();
+
+
         menuText.append(" 1. Vesuvio: tomatsauce, ost, skinke og oregano 57kr\n"+
                 "2. Amerikaner: tomatsauce, ost, Oksefars og oregano 53kr\n"+
                 "3. Cacciatore: tomatsauce, ost, pepperoni og oregano 57kr\n"+
@@ -47,4 +49,10 @@ public class DisplayMenu {
         frame.setSize(600,600);
         frame.setVisible(true);
     }
+
+    public void closeMenu() {
+        frame.dispose();
+
+    }
+
 }

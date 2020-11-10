@@ -36,10 +36,15 @@ public class Main {
                 case "4":
                     menu.showOldOrders();
                     break;
-                    //finish = true didn't work for some reason, changed to system.exit instead
-                case "5": System.exit(0);
+
+                case "5":
+                    displayMenu.closeMenu();
+                    finish = true;
                     break;
 
+                //finish = true does work but doesn't close the DisplayMenu, changed to system.exit instead
+                //case "5": System.exit(0);
+                //Last update using a new method closeMenu with dispose made true work again
             }
         }
     }
