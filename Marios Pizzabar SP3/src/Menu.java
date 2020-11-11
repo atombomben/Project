@@ -24,12 +24,19 @@ abstract public class Menu {
 
     public void createOrder() {
         try {
-            if (orderList.currentOrders.isEmpty()) {
+            if (orderList.oldOrders.isEmpty() && orderList.currentOrders.isEmpty()) {
                 order = new Order(1);
             } else {
-                Order lastOrder = orderList.currentOrders.get(orderList.currentOrders.size() - 1);
-                order = new Order(lastOrder.orderId + 1);
+
+                if (orderList.currentOrders.isEmpty() && !orderList.oldOrders.isEmpty()) {
+                    Order lastOldOrder = orderList.oldOrders.get(orderList.oldOrders.size()-1);
+                    order = new Order(lastOldOrder.orderId+1);
+                } else {
+                    Order lastOrder = orderList.currentOrders.get(orderList.currentOrders.size() - 1);
+                    order = new Order(lastOrder.orderId + 1);
+                }
             }
+
             addPizzasToOrder(order);
             order.calculateTotalPrice();
             System.out.println("Angiv afhentningstidspunkt: eks. '2000' ");
@@ -104,4 +111,18 @@ abstract public class Menu {
             return time;
         }
 
+    public Pizza getPizza(String pizzaName) {
+        for (Pizza pizza: pizzas) {
+            if (pizza.name.equals(pizzaName)) {
+                return pizza;
+            }
+        }
+        return null;
     }
+
+    public void addOldOrder(Order order) {
+        orderList.addOldOrder(order);
+
+    }
+
+}

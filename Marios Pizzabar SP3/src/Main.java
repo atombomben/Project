@@ -2,6 +2,7 @@ import java.util.Scanner;
 //@Author Peter Thomsen
 public class Main {
 
+    static ReadFile fileReader = new ReadFile();
     static Scanner scan = new Scanner(System.in);
     static Menu menu;
     static DisplayMenu displayMenu;
@@ -10,6 +11,7 @@ public class Main {
         displayMenu = new DisplayMenu();
         displayMenu.displayMenu();
         menu = new MainMenu();
+        fileReader.readOldOrderList(menu);
         showMenu();
 
     }

@@ -1,4 +1,5 @@
-orderId: 1, Pizzas:  Dennis, Kristina, totalPrice: 130, Pickup time: 1530
-orderId: 1, Pizzas:  Carbona, totalPrice: 63, Pickup time: 2000
-orderId: 2, Pizzas:  Venezia, Cesar, Brian (UDEN OST), totalPrice: 181, Pickup time: 1900
-orderId: 1, Pizzas:  Capricciosa, totalPrice: 61, Pickup time: 2000
+orderId: 1, Pizzas:  Dennis, Dennis, Dennis, totalPrice: 195, Pickup time: 1730
+orderId: 2, Pizzas:  Venezia, Venezia, totalPrice: 122, Pickup time: 1800
+orderId: 3, Pizzas:  Margherita, totalPrice: 50, Pickup time: 1700
+orderId: 4, Pizzas:  Margherita, totalPrice: 50, Pickup time: 2000
+orderId: 5, Pizzas:  Geddo, totalPrice: 70, Pickup time: 2100

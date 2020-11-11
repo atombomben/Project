@@ -18,8 +18,8 @@ public class OrderList {
     public void removeOrder(int orderId) {
 
         try {
-            oldOrders.add(currentOrders.get(orderId - 1));
-            currentOrders.remove(orderId - 1);
+            oldOrders.add(getOrder(orderId));
+            currentOrders.remove(getOrder(orderId));
             System.out.println("Order " + orderId + " successfully deleted!");
 
         }
@@ -40,6 +40,20 @@ public class OrderList {
         for (Order order: oldOrders) {
             System.out.println(order.toString());
         }
+    }
+
+    public void addOldOrder(Order order) {
+        oldOrders.add(order);
+
+    }
+
+    public Order getOrder(int orderId) {
+        for (Order order: currentOrders ) {
+            if (order.orderId == (orderId)) {
+                return order;
+            }
+        }
+        return null;
     }
 
 }
