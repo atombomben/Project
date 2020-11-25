@@ -17,7 +17,7 @@ public class PizzaStatistics {
         String driverName = "com.mysql.cj.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/SP4?serverTimezone=Europe/Rome";
         String userName = "root";
-        String password = "herr1234";
+        String password = "ENTER PASSWORD";
         String[] columnNames = {"ID", "OrderID", "PizzaID"};
 
         frame = new JFrame("Most Popular Pizzas");
