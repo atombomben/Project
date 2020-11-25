@@ -1,0 +1,21 @@
+orderId: 1, Pizzas:  Dennis, Dennis, Dennis, totalPrice: 195, Pickup time: 1730
+orderId: 2, Pizzas:  Venezia, Venezia, totalPrice: 122, Pickup time: 1800
+orderId: 3, Pizzas:  Margherita, totalPrice: 50, Pickup time: 1700
+orderId: 4, Pizzas:  Margherita, totalPrice: 50, Pickup time: 2000
+orderId: 5, Pizzas:  Geddo, totalPrice: 70, Pickup time: 2100
+orderId: 0, Pizzas:  Vesuvio, totalPrice: 57, Pickup time: 2000
+orderId: 0, Pizzas:  Vesuvio, totalPrice: 57, Pickup time: 2000
+orderId: 0, Pizzas:  Vesuvio, totalPrice: 57, Pickup time: 2000
+orderId: 0, Pizzas:  Vesuvio, totalPrice: 57, Pickup time: 2000
+orderId: 0, Pizzas:  Vesuvio, totalPrice: 57, Pickup time: 2000
+orderId: 0, Pizzas:  Vesuvio, totalPrice: 57, Pickup time: 2000
+orderId: 0, Pizzas:  Vesuvio, totalPrice: 57, Pickup time: 2015
+orderId: 0, Pizzas:  Vesuvio, totalPrice: 57, Pickup time: 1000
+orderId: 0, Pizzas:  Vesuvio, totalPrice: 57, Pickup time: 1500
+orderId: 0, Pizzas:  Amerikaner, Amerikaner, totalPrice: 106, Pickup time: 1100
+orderId: 0, Pizzas:  Amerikaner, Cacciatore, totalPrice: 110, Pickup time: 800
+orderId: 0, Pizzas:  Vesuvio, Amerikaner, totalPrice: 110, Pickup time: 100
+orderId: 0, Pizzas:  Vesuvio, Cacciatore, totalPrice: 114, Pickup time: 215
+orderId: 0, Pizzas:  Amerikaner, Amerikaner, Amerikaner, totalPrice: 159, Pickup time: 315
+orderId: 1, Pizzas:  Margherita, Calzone(Lukket), totalPrice: 124, Pickup time: 1800
+orderId: 2, Pizzas:  Brian (UDEN OST), Ambra, Capricciosa, totalPrice: 181, Pickup time: 1900
