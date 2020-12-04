@@ -47,14 +47,8 @@ public class Bog {
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Bog bog = (Bog) o;
-        return ISBN == bog.ISBN &&
-                udgivelsesår == bog.udgivelsesår &&
-                Objects.equals(Titel, bog.Titel);
+    public boolean equals(Bog bog) {
+        return ISBN == bog.ISBN;
     }
 
     @Override
