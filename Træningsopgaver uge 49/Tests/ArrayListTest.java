@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 
 public class ArrayListTest {
-    Main main = new Main();
+    Task1 task1 = new Task1();
     ArrayList<String> arrayList = new ArrayList<String>() {
         {add("Zlange");add("C vitamin");add("Kode");}};
 
@@ -14,12 +14,13 @@ public class ArrayListTest {
 
     @Test
     public void testNull () {
-        assertEquals(false,main.ArrayList(Herr,arrayList));
+        assertEquals(false,Task1.ArrayList(Herr,arrayList));
     }
 
     @Test
     public void testString () {
-        assertNotEquals(false,main.ArrayList(Gerr,arrayList));
+        assertNotEquals(false,Task1.ArrayList(Gerr,arrayList));
 
     }
+
 }
